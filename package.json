@@ -10,7 +10,9 @@
     "build:dev": "webpack serve --config webpack.dev.js",
     "build:prod": "webpack serve --config webpack.prod.js",
     "dev-server": "webpack serve",
-    "test": "jest --config=jest.config.json"
+    "test": "jest --config=jest.config.json",
+    "start": "node server/server.js",
+    "heroku-postbuild": "yarn run build:prod"
   },
   "dependencies": {
     "@babel/cli": "^7.14.5",
