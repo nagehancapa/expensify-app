@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import ExpenseForm from "./ExpenseForm";
 import { editExpense, removeExpense } from "../actions/expenses";
+import { withRouter } from "react-router";
 
 export class EditExpensePage extends React.Component {
   onSubmit = (expense) => {
@@ -33,4 +34,8 @@ const mapDispatchToProps = (dispatch, props) => ({
   removeExpense: (expense) => dispatch(removeExpense(expense)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(EditExpensePage);
+const EditExpensePageV = withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(EditExpensePage)
+);
+
+export default EditExpensePageV;
